@@ -1,0 +1,192 @@
+[gd_scene load_steps=21 format=3 uid="uid://cmsy45a78fvig"]
+
+[sub_resource type="GDScript" id="GDScript_sill4"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+@onready var anim = get_node(\"AnimatedSprite2D\")
+
+func _ready():
+	get_node(\"AnimatedSprite2D\").play(\"idle\")
+	
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Handle Jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		anim.play(\"jump\")
+	
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
+	
+	if direction == -1:
+		get_node(\"AnimatedSprite2D\").flip_h = true
+	else:
+		get_node(\"AnimatedSprite2D\").flip_h = false
+		
+	if direction:
+		velocity.x = direction * SPEED
+		anim.play(\"run\")
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		anim.play(\"idle\")
+
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yun4y"]
+height = 28.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ky6pi"]
+load_path = "res://.godot/imported/player-climb-1.png-fe864e14918b853a3e8267fc8737e262.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a53sh"]
+load_path = "res://.godot/imported/player-climb-2.png-1f1d109aa552d4ef4739d3c3cfc574c2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ena8j"]
+load_path = "res://.godot/imported/player-climb-3.png-2b7a9515dc1e6f6d65367e90ae2a9d91.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6olag"]
+load_path = "res://.godot/imported/player-hurt-1.png-8ce0ee9b53289979342592221c06e7ed.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vkbx7"]
+load_path = "res://.godot/imported/player-hurt-2.png-eba1a6f176b400eb499e1bdf459e249c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lht5g"]
+load_path = "res://.godot/imported/player-idle-1.png-f7d61bef07b1ec4bfc926e409cf36de5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p8wor"]
+load_path = "res://.godot/imported/player-idle-2.png-d277ac01ae561cbbe56ab87c5b3f62e9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gxdqv"]
+load_path = "res://.godot/imported/player-idle-3.png-e1d4a0c9278adec8923e9bbe78f16593.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b2xb8"]
+load_path = "res://.godot/imported/player-idle-4.png-2f89f2fd38a69594bdb25c0c3ea6bcd5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3pq3h"]
+load_path = "res://.godot/imported/player-jump-1.png-fea8cd187a317e9bfbf594b042f462dd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ei4m7"]
+load_path = "res://.godot/imported/player-jump-2.png-803bf7c155b24bbab9acbb7d3db54181.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cdoml"]
+load_path = "res://.godot/imported/player-run-1.png-6b6fab30b5c13954e83f9574c5bb250f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xrqln"]
+load_path = "res://.godot/imported/player-run-2.png-59e94c8e7f4cd7921f7b49b776898035.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t5xhm"]
+load_path = "res://.godot/imported/player-run-3.png-ba292701b16b0acd75ed33f4ca19821a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mpqmh"]
+load_path = "res://.godot/imported/player-run-4.png-bcd9293be8f2c1af79f465695d3e258d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6144k"]
+load_path = "res://.godot/imported/player-run-5.png-8aa8f588f149c8dbe12c06247697b989.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yixeq"]
+load_path = "res://.godot/imported/player-run-6.png-076af9ce96394a21f92ceb61477e30dd.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unexf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ky6pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_a53sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ena8j")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6olag")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vkbx7")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_lht5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p8wor")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gxdqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_b2xb8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_3pq3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ei4m7")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_cdoml")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xrqln")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_t5xhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_mpqmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6144k")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_yixeq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_sill4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, 15)
+shape = SubResource("CapsuleShape2D_yun4y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(31, 9)
+scale = Vector2(1.32576, 1.4375)
+sprite_frames = SubResource("SpriteFrames_unexf")
+animation = &"run"

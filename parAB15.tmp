@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfcuvg5swxim0"]
+
+[ext_resource type="Script" path="res://langit.gd" id="1_i2jc7"]
+[ext_resource type="Texture2D" uid="uid://cyivd2hhvm3m4" path="res://assets/bg/parallax/parallax-01.png" id="1_qi4e0"]
+[ext_resource type="Script" path="res://ParallaxLayer2.gd" id="2_jccec"]
+[ext_resource type="Texture2D" uid="uid://cffa7txswvsa1" path="res://assets/bg/parallax/parallax-02.png" id="2_mlpt3"]
+[ext_resource type="Script" path="res://awan.gd" id="3_g8tih"]
+[ext_resource type="Texture2D" uid="uid://d0067rbmfge4x" path="res://assets/bg/parallax/parallax-03.png" id="3_w64m3"]
+[ext_resource type="Texture2D" uid="uid://dlnmocru8ylcn" path="res://assets/bg/parallax/parallax-04.png" id="4_c8han"]
+[ext_resource type="Script" path="res://dekat gunung.gd" id="7_4nwkk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jk2l3"]
+load_path = "res://.godot/imported/parallax-00.png-494dd5d64b2f091e5e8198bd90b75182.ctex"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(68, 68)
+
+[node name="langit" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(510, 257.5)
+scale = Vector2(0.798611, 1.78056)
+texture = SubResource("CompressedTexture2D_jk2l3")
+script = ExtResource("1_i2jc7")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+script = ExtResource("2_jccec")
+
+[node name="awan" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(576.25, 188.5)
+scale = Vector2(0.803819, 1.03611)
+texture = ExtResource("1_qi4e0")
+script = ExtResource("3_g8tih")
+CLOUD_SPEED = null
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="gunung" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(575, 257)
+scale = Vector2(0.798611, 0.966667)
+texture = ExtResource("2_mlpt3")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+
+[node name="bukit" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(574, 315)
+scale = Vector2(0.804167, 0.9)
+texture = ExtResource("3_w64m3")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+
+[node name="dekat gunung" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(577.5, 354)
+scale = Vector2(0.799306, 1.14844)
+texture = ExtResource("4_c8han")
+script = ExtResource("7_4nwkk")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+position = Vector2(68, 68)
+
+[node name="Parallax-00" type="Sprite2D" parent="ParallaxLayer6"]
+position = Vector2(1658, 259)
+scale = Vector2(0.798611, 1.78056)
+texture = SubResource("CompressedTexture2D_jk2l3")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+
+[node name="Parallax-01" type="Sprite2D" parent="ParallaxLayer7"]
+position = Vector2(1725, 200)
+scale = Vector2(0.803819, 1.03611)
+texture = ExtResource("1_qi4e0")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+
+[node name="Parallax-02" type="Sprite2D" parent="ParallaxLayer8"]
+position = Vector2(1720, 249)
+scale = Vector2(0.798611, 0.966667)
+texture = ExtResource("2_mlpt3")
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="."]
+
+[node name="Parallax-03" type="Sprite2D" parent="ParallaxLayer9"]
+position = Vector2(1728, 310)
+scale = Vector2(0.804167, 0.9)
+texture = ExtResource("3_w64m3")
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="."]
+
+[node name="Parallax-04" type="Sprite2D" parent="ParallaxLayer10"]
+position = Vector2(1729, 351)
+scale = Vector2(0.799306, 1.14844)
+texture = ExtResource("4_c8han")

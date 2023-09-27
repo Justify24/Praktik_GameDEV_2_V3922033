@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dka7qyguhw0mk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cdoqd"]
+load_path = "res://.godot/imported/back.png-0fa5dd2ce23e38b54c0780cb89b7e210.ctex"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(97, -74)
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(616.5, 323.5)
+scale = Vector2(3.2474, 2.7125)
+texture = SubResource("CompressedTexture2D_cdoqd")

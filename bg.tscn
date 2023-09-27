@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://daynuupwwfk0f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cdoqd"]
+load_path = "res://.godot/imported/back.png-0fa5dd2ce23e38b54c0780cb89b7e210.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21utn"]
+load_path = "res://.godot/imported/middle.png-9044fc43e978d95c1674d263efebc407.ctex"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(574, 323.5)
+scale = Vector2(3.02604, 2.7125)
+texture = SubResource("CompressedTexture2D_cdoqd")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="Middle" type="Sprite2D" parent="."]
+position = Vector2(84, 622)
+scale = Vector2(1.01705, 1.13587)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle"]
+position = Vector2(175, -0.803467)
+scale = Vector2(1, 0.995633)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle2"]
+position = Vector2(175, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle2/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle2/Middle2/Middle2/Middle2"]
+position = Vector2(174, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle2/Middle2/Middle2/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Back" type="Sprite2D" parent="Middle"]
+position = Vector2(1631.2, -263.234)
+scale = Vector2(3.02604, 2.7125)
+texture = SubResource("CompressedTexture2D_cdoqd")
+
+[node name="Middle" type="Sprite2D" parent="Middle"]
+position = Vector2(1059.93, -13.2057)
+scale = Vector2(1.01705, 1.13587)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle"]
+position = Vector2(175, -0.803467)
+scale = Vector2(1, 0.995633)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle/Middle2"]
+position = Vector2(175, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle/Middle2/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle/Middle2/Middle2/Middle2/Middle2"]
+position = Vector2(174, 0)
+texture = SubResource("CompressedTexture2D_21utn")
+
+[node name="Middle2" type="Sprite2D" parent="Middle/Middle/Middle2/Middle2/Middle2/Middle2/Middle2"]
+position = Vector2(176, 0)
+texture = SubResource("CompressedTexture2D_21utn")

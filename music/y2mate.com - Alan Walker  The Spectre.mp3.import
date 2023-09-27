@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pgfalb36hcyk"
+path="res://.godot/imported/y2mate.com - Alan Walker  The Spectre.mp3-50a15a33b075bf496866a97fb7015421.mp3str"
+
+[deps]
+
+source_file="res://music/y2mate.com - Alan Walker  The Spectre.mp3"
+dest_files=["res://.godot/imported/y2mate.com - Alan Walker  The Spectre.mp3-50a15a33b075bf496866a97fb7015421.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

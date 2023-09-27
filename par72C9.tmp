@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfcuvg5swxim0"]
+
+[ext_resource type="Script" path="res://langit.gd" id="1_i2jc7"]
+[ext_resource type="Texture2D" uid="uid://cyivd2hhvm3m4" path="res://assets/bg/parallax/parallax-01.png" id="1_qi4e0"]
+[ext_resource type="Script" path="res://ParallaxLayer2.gd" id="2_jccec"]
+[ext_resource type="Texture2D" uid="uid://cffa7txswvsa1" path="res://assets/bg/parallax/parallax-02.png" id="2_mlpt3"]
+[ext_resource type="Script" path="res://awan.gd" id="3_g8tih"]
+[ext_resource type="Texture2D" uid="uid://d0067rbmfge4x" path="res://assets/bg/parallax/parallax-03.png" id="3_w64m3"]
+[ext_resource type="Texture2D" uid="uid://dlnmocru8ylcn" path="res://assets/bg/parallax/parallax-04.png" id="4_c8han"]
+[ext_resource type="Script" path="res://dekat gunung.gd" id="7_4nwkk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jk2l3"]
+load_path = "res://.godot/imported/parallax-00.png-494dd5d64b2f091e5e8198bd90b75182.ctex"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(68, 68)
+
+[node name="langit" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(812, 257.5)
+scale = Vector2(1.21806, 1.78056)
+texture = SubResource("CompressedTexture2D_jk2l3")
+script = ExtResource("1_i2jc7")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+script = ExtResource("2_jccec")
+
+[node name="awan" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1876, 166)
+scale = Vector2(1.22187, 1.03611)
+texture = ExtResource("1_qi4e0")
+script = ExtResource("3_g8tih")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="gunung" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(799.5, 267.5)
+scale = Vector2(1.59236, 1.30278)
+texture = ExtResource("2_mlpt3")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+
+[node name="bukit" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(876, 315)
+scale = Vector2(1.22361, 0.9)
+texture = ExtResource("3_w64m3")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+
+[node name="dekat gunung" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(881.5, 354)
+scale = Vector2(1.22153, 1.14844)
+texture = ExtResource("4_c8han")
+script = ExtResource("7_4nwkk")
